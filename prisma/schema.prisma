@@ -4,9 +4,10 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_URL")  // ← Remettez cette ligne
 }
 
+// Le reste de votre schéma
 enum Role {
   STUDENT
   LIBRARIAN
