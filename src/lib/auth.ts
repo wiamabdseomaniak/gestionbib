@@ -53,7 +53,9 @@ export const authOptions: AuthOptions = {
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.role = token.role;
+        // Correction définitive pour l'erreur de type
+        const role = token.role as string;
+        session.user.role = (role === "STUDENT" || role === "LIBRARIAN") ? role : "STUDENT";
         session.user.id = token.id as string;
       }
       return session;
