@@ -1,3 +1,4 @@
+// lib/auth.ts
 import { AuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcryptjs';
@@ -52,7 +53,7 @@ export const authOptions: AuthOptions = {
     },
     async session({ session, token }) {
       if (session.user) {
-        session.user.role = token.role as string;
+        session.user.role = token.role;
         session.user.id = token.id as string;
       }
       return session;

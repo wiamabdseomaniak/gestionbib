@@ -4,7 +4,12 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
 
+enum Role {
+  STUDENT
+  LIBRARIAN
 }
 
 model User {
@@ -12,7 +17,7 @@ model User {
   name          String
   email         String         @unique
   password      String
-  role          String         @default("STUDENT")
+  role          Role           @default(STUDENT)
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
   borrowRecords BorrowRecord[]
