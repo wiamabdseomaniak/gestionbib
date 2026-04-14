@@ -38,7 +38,7 @@ export async function GET(request: NextRequest) {
     });
 
     return NextResponse.json({
-      users: users.map(user => ({
+      users: users.map((user: any) => ({
         ...user,
         borrowCount: user._count.borrowRecords,
         _count: undefined,
