@@ -1,5 +1,6 @@
 import NextAuth, { DefaultSession } from "next-auth";
 // types/next-auth.d.ts
+import { Role } from '@prisma/client';
 import "next-auth";
 import { Role } from "./index";
 
