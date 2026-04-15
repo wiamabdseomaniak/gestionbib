@@ -4,13 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")  // ← Remettez cette ligne
-}
-
-// Le reste de votre schéma
-enum Role {
-  STUDENT
-  LIBRARIAN
+  url      = "postgresql://neondb_owner:npg_LWeTGU0Evtu8@ep-frosty-dew-anzf5nyq.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require"
 }
 
 model User {
@@ -18,9 +12,9 @@ model User {
   name          String
   email         String         @unique
   password      String
-  role          Role           @default(STUDENT)
   createdAt     DateTime       @default(now())
   updatedAt     DateTime       @updatedAt
+  role          Role           @default(STUDENT)
   borrowRecords BorrowRecord[]
 }
 
@@ -44,6 +38,11 @@ model BorrowRecord {
   dueDate    DateTime
   returnDate DateTime?
   status     String    @default("PENDING")
-  user       User      @relation(fields: [userId], references: [id])
   book       Book      @relation(fields: [bookId], references: [id])
+  user       User      @relation(fields: [userId], references: [id])
+}
+
+enum Role {
+  STUDENT
+  LIBRARIAN
 }
