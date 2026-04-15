@@ -2,9 +2,9 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
+ddatasource db {
   provider = "postgresql"
-  url      = "postgresql://neondb_owner:npg_LWeTGU0Evtu8@ep-frosty-dew-anzf5nyq.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require"
+  postgresql://neondb_owner:npg_LWeTGU0Evtu8@ep-frosty-dew-anzf5nyq-pooler.c-6.us-east-1.aws.neon.tech/neondb?sslmode=require
 }
 
 model User {

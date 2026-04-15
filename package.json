@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "db:seed": "prisma db seed",
-     "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
     "postinstall": "prisma generate",
     "test:smoke": "node scripts/smoke-test.mjs"
   },
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@prisma/adapter-better-sqlite3": "^7.7.0",
-    "@prisma/client": "^5.22.0",
+    "@prisma/client": "^7.7.0",
     "@types/bcryptjs": "^2.4.6",
     "bcryptjs": "^3.0.3",
     "better-sqlite3": "^12.9.0",
@@ -25,7 +25,6 @@
     "dotenv": "^17.4.2",
     "next": "16.2.3",
     "next-auth": "^4.24.13",
-    "prisma": "^5.22.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "tailwind-merge": "^3.5.0",
@@ -38,6 +37,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.3",
+    "prisma": "^7.7.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
